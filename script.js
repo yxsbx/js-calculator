@@ -53,6 +53,17 @@ function toggleSign() {
   updateDisplay();
 }
 
+function applyPercentage() {
+  if (previousValue !== null) {
+    currentValue = String(
+      parseFloat(previousValue) * (parseFloat(currentValue) / 100)
+    );
+  } else {
+    currentValue = String(parseFloat(currentValue) / 100);
+  }
+  updateDisplay();
+}
+
 function calculateResult() {
   if (operator !== null && previousValue !== null) {
     currentValue = calculate(previousValue, operator, currentValue);
@@ -75,7 +86,7 @@ function calculate(val1, operator, val2) {
     case "*":
       return String(num1 * num2);
     case "/":
-      return num2 !== 0 ? String(num1 / num2) : "Um erro ocorreu";
+      return num2 !== 0 ? String(num1 / num2) : "Erro";
     case "%":
       return String(num1 * (num2 / 100));
     default:
