@@ -87,8 +87,6 @@ function calculate(val1, operator, val2) {
       return String(num1 * num2);
     case "/":
       return num2 !== 0 ? String(num1 / num2) : "Erro";
-    case "%":
-      return String(num1 * (num2 / 100));
     default:
       return "0";
   }
